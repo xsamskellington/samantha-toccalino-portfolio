@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tag": "Disponible para nuevas oportunidades",
+    "role": "Desarrolladora Frontend",
+    "stack": "React · TypeScript · Next.js",
+    "description": "Construyo interfaces accesibles y performantes. Actualmente en <strong>Mercado Libre</strong>, entregando producto a escala en toda Latinoamérica.",
+    "btnWork": "Ver mi trabajo",
+    "btnContact": "Hablemos",
+    "metaLocation": "Ubicación",
+    "metaStatus": "Estado",
+    "metaStatusValue": "Disponible"
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "headline": "Construyo interfaces que funcionan para todos.",
+    "bio": [
+      "Desarrolladora Frontend con 5+ años de experiencia, especializada en React, TypeScript y Next.js. Actualmente en Mercado Libre, trabajando en el flujo de Vender tu Artículo — el producto core de publicación de ítems, con millones de usuarios activos diarios en web, Android e iOS.",
+      "Impulsé la accesibilidad como iniciativa propia: audité con Lighthouse y herramientas internas de ML, definí el roadmap de mejoras y elevé el score de a11y del equipo en un 15%+. Uso herramientas de IA a diario como parte de lo que llamo SDD (Desarrollo Autodirigido) — un flujo de trabajo basado en autonomía, altos estándares y entregar cosas que duran."
+    ],
+    "skillsTitle": "Skills",
+    "skills": [
+      { "label": "Core",           "items": ["React", "TypeScript", "JavaScript", "Next.js", "Node.js", "HTML", "CSS"] },
+      { "label": "Estilos",        "items": ["Tailwind", "CSS Modules", "Styled Components", "Material UI"] },
+      { "label": "Testing",        "items": ["Jest", "Storybook", "Testing Library", "CI/CD"] },
+      { "label": "Monitoreo",      "items": ["New Relic", "DataDog", "Kibana", "Lighthouse"] },
+      { "label": "A11y",           "items": ["WCAG", "Auditorías de a11y", "Screen reader testing"] },
+      { "label": "IA & Tools",     "items": ["Cursor", "GitHub Copilot", "Claude", "SDD", "Jira", "Figma", "Postman"] },
+      { "label": "Diseño",         "items": ["Procreate", "Photoshop", "After Effects", "UI design"] }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Trabajos seleccionados",
+    "title": "Proyectos",
+    "featuredBadge": "Destacado",
+    "visitSite": "Ver sitio →",
+    "items": [
+      {
+        "id": "sell-your-item",
+        "title": "Vender tu Artículo",
+        "company": "Mercado Libre",
+        "year": "2022–presente",
+        "description": "El flujo core de publicación de ítems para vendedores en toda Latinoamérica — millones de usuarios activos diarios en web y webview móvil (Android & iOS). La accesibilidad se convirtió en mi iniciativa.",
+        "highlights": [
+          "Impulsé a11y como iniciativa propia — auditando con Lighthouse y herramientas internas de ML, elevando el score de accesibilidad en un 15%+",
+          "Me convertí en la referente de accesibilidad dentro del proyecto, con reconocimiento del equipo",
+          "Monitoreo de salud en producción con New Relic, DataDog y Kibana; participación en rotaciones de on-call",
+          "Knowledge Multiplier certificada — documentando componentes y procesos para acelerar el onboarding",
+          "Stack: React, TypeScript, framework interno tipo Next.js, design system Andes"
+        ],
+        "tags": ["React", "TypeScript", "Next.js", "Accesibilidad", "New Relic", "Storybook"],
+        "type": "trabajo",
+        "featured": true,
+        "url": null
+      },
+      {
+        "id": "wearerojo",
+        "title": "wearerojo.com",
+        "company": "Freelance",
+        "year": "2024",
+        "description": "Sitio completo para Rojo, una agencia creativa — desde el concepto visual y branding hasta la producción responsive. Sin templates externos. Ownership total de punta a punta.",
+        "highlights": [],
+        "tags": ["React", "Diseño", "End-to-end", "Branding"],
+        "url": "https://wearerojo.com",
+        "type": "freelance",
+        "featured": false
+      },
+      {
+        "id": "pulse-people",
+        "title": "Pulse & People",
+        "company": "Freelance",
+        "year": "2026",
+        "description": "Sitio para una consultora de RRHH enfocada en PYMEs. Estética cálida y moderna — diseñada para sentirse accesible sin perder credibilidad.",
+        "highlights": [],
+        "tags": ["Next.js", "CSS Modules", "Diseño"],
+        "url": "https://pulseandpeople.com",
+        "type": "freelance",
+        "featured": false
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Experiencia",
+    "title": "Dónde trabajé",
+    "items": [
+      {
+        "company": "Mercado Libre",
+        "role": "Desarrolladora Frontend",
+        "period": "Abr 2022 — Presente",
+        "location": "Buenos Aires, Argentina · Tiempo completo",
+        "bullets": [
+          "Desarrollo de features para Vender tu Artículo — el producto core de publicación de ítems, con millones de usuarios activos diarios en web y webview móvil (Android & iOS)",
+          "Impulsé la accesibilidad como iniciativa propia: auditando con Lighthouse y herramientas internas de ML, elevando el score de a11y en un 15%+ y convirtiéndome en la referente del equipo",
+          "Garantizo la calidad del código con unit testing en Jest e isolación de componentes en Storybook, validando flujos clave sin soporte de QA dedicado",
+          "Monitoreo de salud en producción con New Relic, DataDog y Kibana — participación en rotaciones de on-call y resolución de incidentes en flujos críticos",
+          "Desarrollo asistido por IA (Cursor, GitHub Copilot, Claude) a lo largo del ciclo completo de features mediante metodología SDD",
+          "Knowledge Multiplier certificada — documentando componentes y procesos para acelerar el onboarding en los equipos de IT y Producto"
+        ]
+      },
+      {
+        "company": "99minutos.com",
+        "role": "Desarrolladora Frontend",
+        "period": "Mar 2021 — Abr 2022",
+        "location": "Ciudad de México · Promovida Jr → SSR en 9 meses",
+        "bullets": [
+          "Lideré la arquitectura frontend de una plataforma interna de RRHH — estructura de componentes, integración de APIs y desarrollo completo de features desde setup hasta deploy",
+          "Construí y mantuve features para una plataforma interna de logística usando React, Next.js y Material UI",
+          "Mentoreé a dos desarrolladoras junior y produje tutoriales en video y documentación escrita para reducir el tiempo de onboarding"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Desarrolladora Frontend & Diseñadora",
+        "period": "2024 — presente",
+        "location": "Remoto",
+        "bullets": [
+          "Proyectos de punta a punta: concepto visual, desarrollo y deployment",
+          "Clientes en agencias creativas y consultoría de RRHH"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "headline": "Hablemos.",
+    "sub": "Abierta a roles frontend, proyectos freelance y conversaciones interesantes. Basada en Buenos Aires, disponible de forma remota.",
+    "links": [
+      { "label": "Email",     "value": "samantha.valdez.toccalino@gmail.com", "href": "mailto:samantha.valdez.toccalino@gmail.com", "external": false },
+      { "label": "WhatsApp",  "value": "Enviar mensaje",             "href": "https://wa.me/5491121882049",                           "external": true },
+      { "label": "GitHub",    "value": "github.com/xsamskellington",  "href": "https://github.com/xsamskellington",                   "external": true },
+      { "label": "LinkedIn",  "value": "in/samanthatoccalino",       "href": "https://www.linkedin.com/in/samanthatoccalino/",         "external": true }
+    ],
+    "footerMeta": "Buenos Aires · Argentina"
+  }
+}

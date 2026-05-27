@@ -1,0 +1,232 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--page-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.nav.scrolled {
+  background-color: rgba(9, 9, 14, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 110;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+/* Desktop nav */
+.desktopNav {
+  display: flex;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.link {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.link::before {
+  content: "_";
+  color: var(--accent);
+  opacity: 0;
+  margin-right: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.link:hover::before {
+  opacity: 1;
+}
+
+/* Nav right cluster (lang toggle + hamburger) */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 110;
+}
+
+/* Language toggle */
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.langBtn {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+  padding: 0.1rem 0;
+}
+
+.langBtn[aria-pressed="true"] {
+  color: var(--accent);
+}
+
+.langBtn:hover {
+  color: var(--text-primary);
+}
+
+.langSep {
+  font-size: 0.5rem;
+  color: var(--border-mid);
+  user-select: none;
+}
+
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  position: relative;
+  z-index: 110;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--text-secondary);
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.2s ease;
+  transform-origin: center;
+}
+
+.hamburger:hover span {
+  background: var(--text-primary);
+}
+
+/* Animate to X when open */
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile fullscreen menu */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--page-padding);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.mobileMenu[data-open="true"] {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.mobileLinks li {
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition-delay: calc(var(--i) * 0.07s);
+}
+
+.mobileMenu[data-open="true"] .mobileLinks li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 10vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobileLink:hover {
+  color: var(--accent);
+  padding-left: 0.5rem;
+}
+
+.mobileLinkNum {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  padding-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+}
