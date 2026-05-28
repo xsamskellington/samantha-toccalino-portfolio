@@ -6,7 +6,7 @@ import { makeFadeUp } from '@/lib/animations';
 import { useLanguage } from '@/i18n/LanguageContext';
 import styles from './Contact.module.css';
 
-const B = 'contact';
+const defaultClassName = 'contact';
 const fadeUp = makeFadeUp(0.5);
 
 export default function Contact() {
@@ -18,20 +18,20 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className={styles[B]}
+      className={styles[defaultClassName]}
       ref={ref}
       aria-label="Contact"
     >
-      <div className={styles[`${B}__inner`]}>
+      <div className={styles[`${defaultClassName}__inner`]}>
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           custom={0}
         >
-          <p className={styles[`${B}__eyebrow`]}>{c.eyebrow}</p>
-          <h2 className={styles[`${B}__headline`]}>{c.headline}</h2>
-          <p className={styles[`${B}__sub`]}>{c.sub}</p>
+          <p className={styles[`${defaultClassName}__eyebrow`]}>{c.eyebrow}</p>
+          <h2 className={styles[`${defaultClassName}__headline`]}>{c.headline}</h2>
+          <p className={styles[`${defaultClassName}__sub`]}>{c.sub}</p>
         </motion.div>
 
         <motion.div
@@ -40,22 +40,22 @@ export default function Contact() {
           animate={inView ? 'visible' : 'hidden'}
           custom={1}
         >
-          <div className={styles[`${B}__links`]} role="list">
+          <div className={styles[`${defaultClassName}__links`]} role="list">
             {c.links.map(({ label, value, href, external }) => (
               <a
                 key={label}
                 href={href}
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
-                className={styles[`${B}__link`]}
+                className={styles[`${defaultClassName}__link`]}
                 role="listitem"
                 aria-label={`${label}: ${value}`}
               >
                 <div>
-                  <p className={styles[`${B}__link-label`]}>{label}</p>
-                  <p className={styles[`${B}__link-value`]}>{value}</p>
+                  <p className={styles[`${defaultClassName}__link-label`]}>{label}</p>
+                  <p className={styles[`${defaultClassName}__link-value`]}>{value}</p>
                 </div>
-                <span className={styles[`${B}__link-arrow`]} aria-hidden="true">
+                <span className={styles[`${defaultClassName}__link-arrow`]} aria-hidden="true">
                   →
                 </span>
               </a>
@@ -64,12 +64,12 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <footer className={styles[`${B}__footer`]} role="contentinfo">
-        <span className={styles[`${B}__footer-logo`]}>
+      <footer className={styles[`${defaultClassName}__footer`]} role="contentinfo">
+        <span className={styles[`${defaultClassName}__footer-logo`]}>
           ST<span>.</span>
         </span>
-        <div className={styles[`${B}__footer-right`]}>
-          <span className={styles[`${B}__footer-meta`]}>{c.footerMeta}</span>
+        <div className={styles[`${defaultClassName}__footer-right`]}>
+          <span className={styles[`${defaultClassName}__footer-meta`]}>{c.footerMeta}</span>
         </div>
       </footer>
     </section>
