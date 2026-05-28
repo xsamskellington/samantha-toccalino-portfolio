@@ -143,7 +143,7 @@ export default function Nav() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
-        inert={!menuOpen ? "" : undefined}
+        inert={!menuOpen || undefined}
       >
         <nav aria-label="Mobile navigation">
           <ul className={`${defaultClassName}__mobile-links`} role="list">
