@@ -1,11 +1,11 @@
-.section {
+.projects {
   padding: var(--section-gap) var(--page-padding);
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
 }
 
-.eyebrow {
+.projects__eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -15,14 +15,14 @@
   color: var(--accent);
   margin-bottom: 1rem;
   font-weight: 700;
+
+  &::before {
+    content: "△";
+    font-size: 0.5rem;
+  }
 }
 
-.eyebrow::before {
-  content: "△";
-  font-size: 0.5rem;
-}
-
-.title {
+.projects__title {
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -30,48 +30,61 @@
   margin-bottom: 4rem;
 }
 
-/* Featured card — full width */
-.featured {
+.projects__featured {
   border: 1px solid var(--border-mid);
   background: var(--bg-raised);
   margin-bottom: 1px;
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--accent);
+  }
 }
 
-.featured:hover {
-  border-color: var(--accent);
-}
-
-.featuredInner {
+.projects__featured-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.featuredLeft {
+.projects__featured-left {
   padding: 3.5rem;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 800px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem;
+  }
 }
 
-.featuredRight {
+.projects__featured-right {
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 800px) {
+    padding: 2rem;
+  }
 }
 
-.cardMeta {
+.projects__card-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.cardBadge {
+.projects__card-badge {
   font-size: 0.5625rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -81,13 +94,13 @@
   font-weight: 700;
 }
 
-.cardYear {
+.projects__card-year {
   font-size: 0.5625rem;
   color: var(--text-tertiary);
   letter-spacing: 0.1em;
 }
 
-.cardTitle {
+.projects__card-title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
@@ -95,52 +108,52 @@
   line-height: 1.05;
 }
 
-.cardCompany {
+.projects__card-company {
   font-size: 0.6875rem;
   color: var(--accent);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.cardDescription {
+.projects__card-description {
   font-size: 0.9375rem;
   color: var(--text-primary);
   line-height: 1.8;
   flex: 1;
 }
 
-.cardHighlights {
+.projects__card-highlights {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+
+  li {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+
+    &::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.4rem;
+      top: 0.3em;
+    }
+  }
 }
 
-.cardHighlights li {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  padding-left: 1.25rem;
-  position: relative;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
-}
-
-.cardHighlights li::before {
-  content: "◆";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 0.4rem;
-  top: 0.3em;
-}
-
-.cardTags {
+.projects__card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
 }
 
-.cardTag {
+.projects__card-tag {
   font-size: 0.625rem;
   color: var(--text-tertiary);
   border: 1px solid var(--border);
@@ -149,15 +162,18 @@
   text-transform: uppercase;
 }
 
-/* Small cards row */
-.smallGrid {
+.projects__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
   background: var(--border);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.smallCard {
+.projects__card {
   background: var(--bg);
   padding: 2.5rem;
   display: flex;
@@ -166,30 +182,34 @@
   transition: background-color 0.25s ease;
   position: relative;
   overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover {
+    background: var(--bg-raised);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding: 2rem;
+  }
 }
 
-.smallCard::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
-}
-
-.smallCard:hover {
-  background: var(--bg-raised);
-}
-
-.smallCard:hover::after {
-  transform: scaleX(1);
-}
-
-.cardLink {
+.projects__card-link {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -200,32 +220,8 @@
   text-transform: uppercase;
   margin-top: auto;
   transition: gap 0.2s ease;
-}
 
-.cardLink:hover {
-  gap: 0.625rem;
-}
-
-@media (max-width: 800px) {
-  .featuredInner {
-    grid-template-columns: 1fr;
-  }
-
-  .featuredLeft {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 2rem;
-  }
-
-  .featuredRight {
-    padding: 2rem;
-  }
-
-  .smallGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .smallCard {
-    padding: 2rem;
+  &:hover {
+    gap: 0.625rem;
   }
 }

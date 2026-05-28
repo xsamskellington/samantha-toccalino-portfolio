@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useLanguage, type Lang } from "@/i18n/LanguageContext";
 import styles from "./Nav.module.css";
 
+const B = "nav";
+
 export default function Nav() {
   const { lang, setLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
@@ -28,19 +30,19 @@ export default function Nav() {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  const LangToggle = ({ className }: { className?: string }) => (
-    <div className={`${styles.langToggle} ${className ?? ""}`} role="group" aria-label="Language">
+  const LangToggle = () => (
+    <div className={styles[`${B}__lang-toggle`]} role="group" aria-label="Language">
       <button
-        className={styles.langBtn}
+        className={styles[`${B}__lang-btn`]}
         aria-pressed={lang === "en"}
         onClick={() => setLang("en")}
         aria-label="Switch to English"
       >
         EN
       </button>
-      <span className={styles.langSep} aria-hidden="true">/</span>
+      <span className={styles[`${B}__lang-sep`]} aria-hidden="true">/</span>
       <button
-        className={styles.langBtn}
+        className={styles[`${B}__lang-btn`]}
         aria-pressed={lang === "es"}
         onClick={() => setLang("es")}
         aria-label="Cambiar a Español"
@@ -53,30 +55,28 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
+        className={`${styles[B]} ${scrolled ? styles[`${B}--scrolled`] : ""}`}
         role="banner"
       >
-        <a href="#" className={styles.logo} aria-label="Home">
+        <a href="#" className={styles[`${B}__logo`]} aria-label="Home">
           ST<span>.</span>
         </a>
 
-        {/* Desktop nav */}
-        <nav aria-label="Main navigation" className={styles.desktopNav}>
-          <ul className={styles.links} role="list">
+        <nav aria-label="Main navigation" className={styles[`${B}__desktop`]}>
+          <ul className={styles[`${B}__links`]} role="list">
             {links.map(({ label, href }) => (
               <li key={href}>
-                <a href={href} className={styles.link}>{label}</a>
+                <a href={href} className={styles[`${B}__link`]}>{label}</a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className={styles.navRight}>
+        <div className={styles[`${B}__right`]}>
           <LangToggle />
 
-          {/* Mobile hamburger */}
           <button
-            className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ""}`}
+            className={`${styles[`${B}__hamburger`]} ${menuOpen ? styles[`${B}__hamburger--open`] : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -88,18 +88,17 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* Mobile menu overlay */}
       <div
-        className={styles.mobileMenu}
+        className={styles[`${B}__mobile`]}
         data-open={menuOpen}
         aria-hidden={!menuOpen}
       >
         <nav aria-label="Mobile navigation">
-          <ul className={styles.mobileLinks} role="list">
+          <ul className={styles[`${B}__mobile-links`]} role="list">
             {links.map(({ label, href }, i) => (
-              <li key={href} style={{ "--i": i } as React.CSSProperties}>
-                <a href={href} className={styles.mobileLink} onClick={handleLinkClick}>
-                  <span className={styles.mobileLinkNum}>0{i + 1}</span>
+              <li key={href} className={styles[`${B}__mobile-item`]} style={{ "--i": i } as React.CSSProperties}>
+                <a href={href} className={styles[`${B}__mobile-link`]} onClick={handleLinkClick}>
+                  <span className={styles[`${B}__mobile-link-num`]}>0{i + 1}</span>
                   {label}
                 </a>
               </li>

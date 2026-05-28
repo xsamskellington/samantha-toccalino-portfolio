@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { makeFadeUp } from "@/lib/animations";
-import { useLanguage } from "@/i18n/LanguageContext";
-import styles from "./Hero.module.css";
+import { motion } from 'framer-motion';
+import { makeFadeUp } from '@/lib/animations';
+import { useLanguage } from '@/i18n/LanguageContext';
+import styles from './Hero.module.css';
 
+const B = 'hero';
 const fadeUp = makeFadeUp(0.65, 0.1);
 
 export default function Hero() {
@@ -12,10 +13,10 @@ export default function Hero() {
   const h = t.hero;
 
   return (
-    <section className={styles.hero} aria-label="Introduction">
-      <div className={styles.content}>
+    <section className={styles[B]} aria-label="Introduction">
+      <div className={styles[`${B}__content`]}>
         <motion.div
-          className={styles.tag}
+          className={styles[`${B}__tag`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -25,30 +26,30 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1
-          className={styles.name}
+          className={styles[`${B}__name`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={1}
         >
           Samantha
-          <span className={styles.nameDim}>Toccalino</span>
+          <span className={styles[`${B}__name-dim`]}>Toccalino</span>
         </motion.h1>
 
         <motion.div
-          className={styles.divider}
+          className={styles[`${B}__divider`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={2}
           aria-hidden="true"
         >
-          <span className={styles.dividerLine} />
-          <span className={styles.dividerDot} />
+          <span className={styles[`${B}__divider-line`]} />
+          <span className={styles[`${B}__divider-dot`]} />
         </motion.div>
 
         <motion.p
-          className={styles.role}
+          className={styles[`${B}__role`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -58,7 +59,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.p
-          className={styles.description}
+          className={styles[`${B}__description`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -67,40 +68,40 @@ export default function Hero() {
         />
 
         <motion.div
-          className={styles.actions}
+          className={styles[`${B}__actions`]}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={5}
         >
-          <a href="#projects" className={styles.btnPrimary}>
+          <a href="#projects" className={styles[`${B}__btn--primary`]}>
             {h.btnWork}
           </a>
-          <a href="#contact" className={styles.btnSecondary}>
+          <a href="#contact" className={styles[`${B}__btn--secondary`]}>
             {h.btnContact} →
           </a>
         </motion.div>
       </div>
 
       <motion.div
-        className={styles.meta}
+        className={styles[`${B}__meta`]}
         variants={fadeUp}
         initial="hidden"
         animate="visible"
         custom={6}
         aria-hidden="true"
       >
-        <div className={styles.metaLeft}>
-          <span className={styles.metaLabel}>{h.metaLocation}</span>
-          <span className={styles.metaValue}>Buenos Aires, AR</span>
+        <div className={styles[`${B}__meta-item`]}>
+          <span className={styles[`${B}__meta-label`]}>{h.metaLocation}</span>
+          <span className={styles[`${B}__meta-value`]}>Buenos Aires, AR</span>
         </div>
-        <div className={styles.metaLeft}>
-          <span className={styles.metaLabel}>{h.metaStatus}</span>
-          <span className={styles.metaValue}>{h.metaStatusValue}</span>
+        <div className={styles[`${B}__meta-item`]}>
+          <span className={styles[`${B}__meta-label`]}>{h.metaStatus}</span>
+          <span className={styles[`${B}__meta-value`]}>{h.metaStatusValue}</span>
         </div>
-        <div className={styles.refNumber}>
-          <span>UNIT_ST-01</span>
-          FRONTEND DEV / SSR<br />
+        <div className={styles[`${B}__ref`]}>
+          FRONTEND DEV / SSR
+          <br />
           MELI · LATAM
         </div>
       </motion.div>
