@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 import en from "./en.json";
 import es from "./es.json";
 
@@ -23,18 +24,24 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("lang") as Lang | null;
-    if (saved === "en" || saved === "es") setLangState(saved);
+    if (saved === "en" || saved === "es") {
+      setLangState(saved);
+      document.documentElement.lang = saved;
+    }
   }, []);
 
   const setLang = (l: Lang) => {
     setLangState(l);
     localStorage.setItem("lang", l);
+    document.documentElement.lang = l;
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: dicts[lang] }}>
-      {children}
-    </LanguageContext.Provider>
+    <MotionConfig reducedMotion="user">
+      <LanguageContext.Provider value={{ lang, setLang, t: dicts[lang] }}>
+        {children}
+      </LanguageContext.Provider>
+    </MotionConfig>
   );
 }
 
