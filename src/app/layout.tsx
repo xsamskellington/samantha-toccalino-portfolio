@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Abril_Fatface, Shippori_Mincho_B1, Space_Mono } from "next/font/google";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
+import "../styles/nav.scss";
+import "../styles/hero.scss";
+import "../styles/about.scss";
+import "../styles/projects.scss";
+import "../styles/experience.scss";
+import "../styles/contact.scss";
 
 const abrilFatface = Abril_Fatface({
   variable: "--font-abril",

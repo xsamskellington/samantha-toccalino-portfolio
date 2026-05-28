@@ -16,9 +16,9 @@ export default function About() {
   const a = t.about;
 
   return (
-    <section id="about" className={styles[defaultClassName]} ref={ref} aria-label="About">
+    <section id="about" className={defaultClassName} ref={ref} aria-label="About">
       <motion.p
-        className={styles[`${defaultClassName}__eyebrow`]}
+        className={`${defaultClassName}__eyebrow`}
         variants={fadeUp}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -27,10 +27,10 @@ export default function About() {
         {a.eyebrow}
       </motion.p>
 
-      <div className={styles[`${defaultClassName}__grid`]}>
+      <div className={`${defaultClassName}__grid`}>
         <div>
           <motion.h2
-            className={styles[`${defaultClassName}__headline`]}
+            className={`${defaultClassName}__headline`}
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -40,7 +40,7 @@ export default function About() {
           </motion.h2>
 
           <motion.div
-            className={styles[`${defaultClassName}__bio`]}
+            className={`${defaultClassName}__bio`}
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -54,7 +54,7 @@ export default function About() {
 
         <div>
           <motion.p
-            className={styles[`${defaultClassName}__skills-label`]}
+            className={`${defaultClassName}__skills-label`}
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -64,18 +64,18 @@ export default function About() {
           </motion.p>
 
           <motion.div
-            className={styles[`${defaultClassName}__skill-groups`]}
+            className={`${defaultClassName}__skill-groups`}
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             custom={4}
           >
             {a.skills.map((group) => (
-              <div key={group.label} className={styles[`${defaultClassName}__skill-group`]}>
-                <span className={styles[`${defaultClassName}__skill-group-label`]}>{group.label}</span>
-                <div className={styles[`${defaultClassName}__skill-items`]}>
+              <div key={group.label} className={`${defaultClassName}__skill-group`}>
+                <span className={`${defaultClassName}__skill-group-label`}>{group.label}</span>
+                <div className={`${defaultClassName}__skill-items`}>
                   {group.items.map((item) => (
-                    <span key={item} className={styles[`${defaultClassName}__skill-tag`]}>
+                    <span key={item} className={`${defaultClassName}__skill-tag`}>
                       {item}
                     </span>
                   ))}

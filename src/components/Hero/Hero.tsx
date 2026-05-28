@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { makeFadeUp } from '@/lib/animations';
 import { useLanguage } from '@/i18n/LanguageContext';
-import styles from './Hero.module.css';
 
 const defaultClassName = 'hero';
 const fadeUp = makeFadeUp(0.65, 0.1);
@@ -13,10 +12,10 @@ export default function Hero() {
   const h = t.hero;
 
   return (
-    <section className={styles[defaultClassName]} aria-label="Introduction">
-      <div className={styles[`${defaultClassName}__content`]}>
+    <section className={defaultClassName} aria-label="Introduction">
+      <div className={`${defaultClassName}__content`}>
         <motion.div
-          className={styles[`${defaultClassName}__tag`]}
+          className={`${defaultClassName}__tag`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -26,30 +25,30 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1
-          className={styles[`${defaultClassName}__name`]}
+          className={`${defaultClassName}__name`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={1}
         >
           Samantha
-          <span className={styles[`${defaultClassName}__name-dim`]}>Toccalino</span>
+          <span className={`${defaultClassName}__name-dim`}>Toccalino</span>
         </motion.h1>
 
         <motion.div
-          className={styles[`${defaultClassName}__divider`]}
+          className={`${defaultClassName}__divider`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={2}
           aria-hidden="true"
         >
-          <span className={styles[`${defaultClassName}__divider-line`]} />
-          <span className={styles[`${defaultClassName}__divider-dot`]} />
+          <span className={`${defaultClassName}__divider-line`} />
+          <span className={`${defaultClassName}__divider-dot`} />
         </motion.div>
 
         <motion.p
-          className={styles[`${defaultClassName}__role`]}
+          className={`${defaultClassName}__role`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -59,7 +58,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.p
-          className={styles[`${defaultClassName}__description`]}
+          className={`${defaultClassName}__description`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -68,38 +67,38 @@ export default function Hero() {
         />
 
         <motion.div
-          className={styles[`${defaultClassName}__actions`]}
+          className={`${defaultClassName}__actions`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={5}
         >
-          <a href="#projects" className={styles[`${defaultClassName}__btn--primary`]}>
+          <a href="#projects" className={`${defaultClassName}__btn--primary`}>
             {h.btnWork}
           </a>
-          <a href="#contact" className={styles[`${defaultClassName}__btn--secondary`]}>
+          <a href="#contact" className={`${defaultClassName}__btn--secondary`}>
             {h.btnContact} →
           </a>
         </motion.div>
       </div>
 
       <motion.div
-        className={styles[`${defaultClassName}__meta`]}
+        className={`${defaultClassName}__meta`}
         variants={fadeUp}
         initial="hidden"
         animate="visible"
         custom={6}
         aria-hidden="true"
       >
-        <div className={styles[`${defaultClassName}__meta-item`]}>
-          <span className={styles[`${defaultClassName}__meta-label`]}>{h.metaLocation}</span>
-          <span className={styles[`${defaultClassName}__meta-value`]}>Buenos Aires, AR</span>
+        <div className={`${defaultClassName}__meta-item`}>
+          <span className={`${defaultClassName}__meta-label`}>{h.metaLocation}</span>
+          <span className={`${defaultClassName}__meta-value`}>Buenos Aires, AR</span>
         </div>
-        <div className={styles[`${defaultClassName}__meta-item`]}>
-          <span className={styles[`${defaultClassName}__meta-label`]}>{h.metaStatus}</span>
-          <span className={styles[`${defaultClassName}__meta-value`]}>{h.metaStatusValue}</span>
+        <div className={`${defaultClassName}__meta-item`}>
+          <span className={`${defaultClassName}__meta-label`}>{h.metaStatus}</span>
+          <span className={`${defaultClassName}__meta-value`}>{h.metaStatusValue}</span>
         </div>
-        <div className={styles[`${defaultClassName}__ref`]}>
+        <div className={`${defaultClassName}__ref`}>
           FRONTEND DEV / SSR
           <br />
           MELI · LATAM

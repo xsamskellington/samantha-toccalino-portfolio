@@ -16,9 +16,9 @@ export default function Experience() {
   const e = t.experience;
 
   return (
-    <section id="experience" className={styles[defaultClassName]} ref={ref} aria-label="Work experience">
+    <section id="experience" className={defaultClassName} ref={ref} aria-label="Work experience">
       <motion.p
-        className={styles[`${defaultClassName}__eyebrow`]}
+        className={`${defaultClassName}__eyebrow`}
         variants={fadeUp}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -28,7 +28,7 @@ export default function Experience() {
       </motion.p>
 
       <motion.h2
-        className={styles[`${defaultClassName}__title`]}
+        className={`${defaultClassName}__title`}
         variants={fadeUp}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -37,26 +37,26 @@ export default function Experience() {
         {e.title}
       </motion.h2>
 
-      <div className={styles[`${defaultClassName}__list`]} role="list">
+      <div className={`${defaultClassName}__list`} role="list">
         {e.items.map((item, i) => (
           <motion.article
             key={item.company}
-            className={styles[`${defaultClassName}__item`]}
+            className={`${defaultClassName}__item`}
             role="listitem"
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             custom={i + 2}
           >
-            <div className={styles[`${defaultClassName}__item-meta`]}>
-              <h3 className={styles[`${defaultClassName}__company`]}>{item.company}</h3>
-              <p className={styles[`${defaultClassName}__period`]}>{item.period}</p>
-              <p className={styles[`${defaultClassName}__location`]}>{item.location}</p>
+            <div className={`${defaultClassName}__item-meta`}>
+              <h3 className={`${defaultClassName}__company`}>{item.company}</h3>
+              <p className={`${defaultClassName}__period`}>{item.period}</p>
+              <p className={`${defaultClassName}__location`}>{item.location}</p>
             </div>
 
             <div>
-              <p className={styles[`${defaultClassName}__role`]}>{item.role}</p>
-              <ul className={styles[`${defaultClassName}__bullets`]} aria-label={`Responsibilities at ${item.company}`}>
+              <p className={`${defaultClassName}__role`}>{item.role}</p>
+              <ul className={`${defaultClassName}__bullets`} aria-label={`Responsibilities at ${item.company}`}>
                 {item.bullets.map((bullet, j) => (
                   <li key={j}>{bullet}</li>
                 ))}

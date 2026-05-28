@@ -31,18 +31,18 @@ export default function Nav() {
   const handleLinkClick = () => setMenuOpen(false);
 
   const LangToggle = () => (
-    <div className={styles[`${defaultClassName}__lang-toggle`]} role="group" aria-label="Language">
+    <div className={`${defaultClassName}__lang-toggle`} role="group" aria-label="Language">
       <button
-        className={styles[`${defaultClassName}__lang-btn`]}
+        className={`${defaultClassName}__lang-btn`}
         aria-pressed={lang === "en"}
         onClick={() => setLang("en")}
         aria-label="Switch to English"
       >
         EN
       </button>
-      <span className={styles[`${defaultClassName}__lang-sep`]} aria-hidden="true">/</span>
+      <span className={`${defaultClassName}__lang-sep`} aria-hidden="true">/</span>
       <button
-        className={styles[`${defaultClassName}__lang-btn`]}
+        className={`${defaultClassName}__lang-btn`}
         aria-pressed={lang === "es"}
         onClick={() => setLang("es")}
         aria-label="Cambiar a Español"
@@ -55,28 +55,28 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`${styles[defaultClassName]} ${scrolled ? styles[`${defaultClassName}--scrolled`] : ""}`}
+        className={`${defaultClassName} ${scrolled ? `${defaultClassName}--scrolled` : ""}`}
         role="banner"
       >
-        <a href="#" className={styles[`${defaultClassName}__logo`]} aria-label="Home">
+        <a href="#" className={`${defaultClassName}__logo`} aria-label="Home">
           ST<span>.</span>
         </a>
 
-        <nav aria-label="Main navigation" className={styles[`${defaultClassName}__desktop`]}>
-          <ul className={styles[`${defaultClassName}__links`]} role="list">
+        <nav aria-label="Main navigation" className={`${defaultClassName}__desktop`}>
+          <ul className={`${defaultClassName}__links`} role="list">
             {links.map(({ label, href }) => (
               <li key={href}>
-                <a href={href} className={styles[`${defaultClassName}__link`]}>{label}</a>
+                <a href={href} className={`${defaultClassName}__link`}>{label}</a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className={styles[`${defaultClassName}__right`]}>
+        <div className={`${defaultClassName}__right`}>
           <LangToggle />
 
           <button
-            className={`${styles[`${defaultClassName}__hamburger`]} ${menuOpen ? styles[`${defaultClassName}__hamburger--open`] : ""}`}
+            className={`${`${defaultClassName}__hamburger`} ${menuOpen ? `${defaultClassName}__hamburger--open` : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -89,16 +89,16 @@ export default function Nav() {
       </header>
 
       <div
-        className={styles[`${defaultClassName}__mobile`]}
+        className={`${defaultClassName}__mobile`}
         data-open={menuOpen}
         aria-hidden={!menuOpen}
       >
         <nav aria-label="Mobile navigation">
-          <ul className={styles[`${defaultClassName}__mobile-links`]} role="list">
+          <ul className={`${defaultClassName}__mobile-links`} role="list">
             {links.map(({ label, href }, i) => (
-              <li key={href} className={styles[`${defaultClassName}__mobile-item`]} style={{ "--i": i } as React.CSSProperties}>
-                <a href={href} className={styles[`${defaultClassName}__mobile-link`]} onClick={handleLinkClick}>
-                  <span className={styles[`${defaultClassName}__mobile-link-num`]}>0{i + 1}</span>
+              <li key={href} className={`${defaultClassName}__mobile-item`} style={{ "--i": i } as React.CSSProperties}>
+                <a href={href} className={`${defaultClassName}__mobile-link`} onClick={handleLinkClick}>
+                  <span className={`${defaultClassName}__mobile-link-num`}>0{i + 1}</span>
                   {label}
                 </a>
               </li>
